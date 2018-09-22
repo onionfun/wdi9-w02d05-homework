@@ -36,7 +36,17 @@ const lands = [
 // ====================================
 //           Chapters
 // ====================================
-
+//$(.startgame).click((e) =>{
+//humanPlyer.handforEach((card)=>){
+  // $('.playerhand').append("text here")
+//}
+//})
+//putting stuff on and taking it off, changing stuff
+//make an empty div$('.choices').append("button class='choice-button id = hit>hit me'></button>")
+//now we have button need fuction ${'choice-button).click((e)=>{
+//})} jauz jamsadam jolly/fife
+//give event listener to something that does exist because dynamic content won't work because it's not in html
+//when you give a function to a jquery listener, it has a parameter even if you don't put one in currentTarget uses e.currentTarget
 // ============
 // Chapter 1
 // ============
@@ -44,22 +54,38 @@ const makeMiddleEarth = () => {
 
   // HINT: Make a console.log for each of your functions to make sure that, when you click, the correct function is being called!
 
-  console.log("Trying to make middle earth.");
+  //console.log("Trying to make middle earth.");
 
   // 1. create a section tag with an id of middle-earth
+  let MiddleEarth = document.createElement('section');
+  MiddleEarth.id = "middle-earth";
+  console.log(MiddleEarth);
 
   // 2. append the section to the body of the DOM.
-
+  // let body = $('body');
+  // $('section').appendTo(body);
+  $('body').append("<section id ='middle-earth'></section>")
   // 3. use a for loop to iterate over the lands array that does the following:
 
   //   3a. creates an article tag (there should be one for each land when the loop is done)
-
+  for ( let i = 0; i < lands.length; i++ ) {
+    let land = document.createElement("article");
+    console.log(land);
+  
   //   3b. gives each land article an `id` tag of the corresponding land name
-
+ land.id = lands[i];
   //   3c. includes an h1 with the name of the land inside each land article
+  let header = ('<h1/>');
+  header.innerHtml = lands[i];
+    //<h1>land name</h1>
+    console.log(header.innerHtml);
+ }
 
   //   3d. appends each land to the middle-earth section
+$('article').append('#land');
 
+let $article = $("article");
+$article.append('<h1/>'); 
 };
 
 // COMMIT YOUR WORK
