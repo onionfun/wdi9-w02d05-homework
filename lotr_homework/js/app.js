@@ -98,11 +98,16 @@ const makeHobbits = () => {
   console.log('Make hobbits');
 
   // 1. display an unordered list of the hobbits in the shire.
+  $ul = ('<ul class="hobbit"></ul>')
+  $body.append($ul)
+
   for ( let i = 0; i < hobbits.length; i++ ){
-  $body.append(`<ul class = "hobbit">${hobbits[i]}</ul>`)
-  console.log($body)}
+  let $li =(`<li class ="${hobbits[i]}" >${hobbits[i]}</li>`)
+  $('.hobbit').append($li)
+  console.log($ul)}
+  
   // 2. give each hobbit a class of "hobbit"
-  $('.hobbit').addClass('hobbit');
+  // $('.hobbit').addClass('hobbit');
   let hop = $('ul.hobbit');
   console.log(hop);
   // hint: create a 'ul' outside the loop upon which to append the 'li's
@@ -121,13 +126,11 @@ const keepItSecretKeepItSafe = () => {
 
   // 1. create an empty div with an id of 'the-ring'
    $('*').css('border', '4px solid green');
-  let $div = document.createElement('div');
-  $div.id = "the-ring";
-  let $body = $('body')
+  let $div = $('<div id="the-ring">Ring</div>');
   $body.append($div)
    console.log($div)
   // 2. add the ring as a child of Frodo
-$('.the-ring').appendChild(`${hobbit[1]}`) ////////////////////////////////////////////////
+$('.hobbit li:first').append($div) ////////////////////////////////////////////////
   // hint: Frodo does not have an id, but there is a command to retrieve all elements with a certain class. This should give you an array for you to access . . .
 
   // when you think you have given Frodo the ring, check in your Elements tab
@@ -143,11 +146,12 @@ $('.the-ring').appendChild(`${hobbit[1]}`) /////////////////////////////////////
 const makeBaddies = () => {
 
   // 1. display an unordered list of baddies in Mordor
+  $ul = ('<ul class="baddies"></ul>')
+  $body.append($ul)
   for ( let i = 0; i < baddies.length; i++ ){
-    let body = $('body');
-  $('body').append(`<ul class = "baddy">${baddies[i]}</ul>`)
-  $('#baddy').appendTo('body .middle-earth');
-  console.log(body)
+  $('body').append(`<li class = "baddy">${baddies[i]}</li>`)
+  $('.baddy').appendTo($ul);
+  console.log($body)
 }
   // 2. give each of the baddies a class of "baddy"
   $('*').css('border', '4px solid yellow');
