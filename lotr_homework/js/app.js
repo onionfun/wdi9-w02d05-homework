@@ -146,13 +146,16 @@ $('.hobbit li:first').append($div) /////////////////////////////////////////////
 const makeBaddies = () => {
 
   // 1. display an unordered list of baddies in Mordor
-  $ul = ('<ul class="baddies"></ul>')
-  $body.append($ul)
+  $ulb = ('<ul class="baddies"></ul>')
+  $body.append($ulb)
   for ( let i = 0; i < baddies.length; i++ ){
-  $('body').append(`<li class = "baddy">${baddies[i]}</li>`)
-  $('.baddy').appendTo($ul);
-  console.log($body)
+  let $lib = (`<li class ="baddy">${baddies[i]}</li>`)
+  $('.baddies').append($lib);
+   console.log($ulb)
+ 
 }
+$('.Mordor').append('.baddies');
+
   // 2. give each of the baddies a class of "baddy"
   $('*').css('border', '4px solid yellow');
   // 3. remember to append them to Mordor
@@ -167,18 +170,16 @@ const makeBaddies = () => {
 const makeBuddies = () => {
 
   // 1. create an aside tag and append it to middle-earth below mordor
-  let aside = $('<aside>');
-  let body = $('body')
-  body.append(aside);
+  let aside = $('<aside></aside>');
     let buddyList = $('<ul>');
     for(let i = 0; i < buddies.length; i++) {
-      let buddy = $('<li>');
-      buddy.text(buddies[i]);
+      let buddy = $(`<li class="buddy">${buddies[i]}</li>`);
       buddyList.append(buddy);
-      buddy.addClass('buddy')
+      aside.append(buddyList);
+ 
     }
     // insert your aside as a child element of rivendell
-    aside.append(buddyList);
+    $('#Rivendell').append(aside);
     $('*').css('border', '4px solid purple');
   };
  
