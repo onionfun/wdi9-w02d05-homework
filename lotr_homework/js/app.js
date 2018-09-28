@@ -61,6 +61,9 @@ const makeMiddleEarth = () => {
   const MiddleEarth = $('<section id="middle-earth"></section>');
   console.log(MiddleEarth);
  $body.append(MiddleEarth)
+ //$middleearth.attr('id', 'middle-earth')
+ // variable.forEach((takes parameter))=>{}  <a method of arrays for each 'hobbit' execute this function
+ //land.attr('id', <what attrib you want to set, lands[i]<what you want to set it to)
  for ( let i = 0; i < lands.length; i++ ) {
   let land = $(`<article id="${lands[i]}">${lands[i]}</article>`);
   $(MiddleEarth).append(land)
@@ -239,8 +242,8 @@ const forgeTheFellowShip = () => {
   // 1. create a new div with an id 'the-fellowship'
   let $div = $('<div id="the-fellowship">The Fellowship</div>');
   let $body = $('body');
-$body.append($div)
-console.log($body);
+MiddleEarth.append($div)
+console.log(MiddleEarth);
 
   // 2. add an h1 with the text 'The Fellowship' to this new div
 
@@ -290,11 +293,12 @@ const hornOfGondor = () => {
   // 1. create a pop-up alert that the horn of gondor has been blown
 window.alert("the horn of gondor has been blown");
   // 2. Boromir's been killed by the Uruk-hai! Put a linethrough on Boromir's name
-window.alert("too soon :(")
+
 
 (document.buddies[4]).css('text-decoration', 'line-through')
 boromir.css('text-decoration', 'line-through');
-
+//$('buddy:contains("Gandalf the Grey")').text('Candalf he white).addClass("the-white")
+$('.baddy:contains("Uruk-hai")').remove()
   // 3. Tricky: Remove the Uruk-Hai from the Baddies on the page
 
 
@@ -306,7 +310,7 @@ boromir.css('text-decoration', 'line-through');
 // Chapter 11
 // ============
 const itsDangerousToGoAlone = () => {
-
+$('#mordor').append('.hobbit:contains("frodo"), .hobbit:contains("sam")')
   // 1. take Frodo and Sam out of the fellowship and move them to Mordor (they don't need to be inside a ul in Mordor)
   $('.hobbit').eq(0).appendTo($('#Mordor'))
   $('.hobbit').eq(1).appendTo($('#Mordor'))
@@ -325,7 +329,9 @@ $('.hobbit').eq(0).appendTo($('#Mordor'))
 // Chapter 12
 // ============
 const weWantsIt = () => {
-
+$('#Mordor').append('<div id=gollum></div>');
+$('#gollum').append($('#the-ring'));
+$('#mount-doom').append($('#gollum'));
   // 1. Create a div with an id of 'gollum' and add it to Mordor
 // $('body').append('div')
 const $body = $("body");
